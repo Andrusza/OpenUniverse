@@ -19,6 +19,12 @@
     <Filter Include="Header Files\glm">
       <UniqueIdentifier>{f89e64b3-09aa-4a43-81b9-ef42873195c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Misc">
+      <UniqueIdentifier>{85d599ce-031f-456e-84f8-83cce48d2ff8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Misc">
+      <UniqueIdentifier>{3458f295-e025-4105-9a8c-15d715aec2d5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GL\freeglut.h">
@@ -396,10 +402,19 @@
     <ClInclude Include="glm\virtrev\xstream.hpp">
       <Filter>Header Files\glm</Filter>
     </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Clock.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Clock.cpp">
+      <Filter>Source Files\Misc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
