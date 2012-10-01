@@ -1,4 +1,4 @@
-#include "FpsCounter.h"
+#include "FpsCounter.hpp"
 #include <iostream>
 
 FpsCounter::FpsCounter()
@@ -11,7 +11,7 @@ void FpsCounter::calculateFPS(unsigned int currentTime)
 {
 
 	frameCount++;
-	int timeInterval = currentTime - previousTime;
+	unsigned int timeInterval = currentTime - previousTime;
 
 	if(timeInterval > 1000)
 	{

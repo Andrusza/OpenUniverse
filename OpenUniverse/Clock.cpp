@@ -1,4 +1,4 @@
-#include "Clock.h"
+#include "Clock.hpp"
 #include <GL\freeglut.h>
 #include <ctime>
 
@@ -11,6 +11,6 @@ void ProgramClock::getElapsedTime()
 
 unsigned int ProgramClock::CurrentTime()
 {
-	unsigned int x=time(0);
+	unsigned int x=(unsigned int)time(0);
 	return x;
 }

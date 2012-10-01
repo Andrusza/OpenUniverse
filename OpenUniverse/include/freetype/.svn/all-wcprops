@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/109/trunk/windows/freetype/freetype
+END
+ftcid.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftcid.h
+END
+ftmac.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftmac.h
+END
+ftoutln.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftoutln.h
+END
+fttrigon.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/fttrigon.h
+END
+ftcache.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftcache.h
+END
+ttunpat.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ttunpat.h
+END
+ftsynth.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftsynth.h
+END
+ftstroke.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftstroke.h
+END
+ftchapters.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftchapters.h
+END
+ftmodapi.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftmodapi.h
+END
+ftlist.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftlist.h
+END
+tttags.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/tttags.h
+END
+ftbitmap.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftbitmap.h
+END
+ftlzw.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftlzw.h
+END
+ftincrem.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftincrem.h
+END
+ftrender.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftrender.h
+END
+ftglyph.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftglyph.h
+END
+t1tables.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/t1tables.h
+END
+ftbzip2.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftbzip2.h
+END
+ftsnames.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftsnames.h
+END
+tttables.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/tttables.h
+END
+ftmoderr.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftmoderr.h
+END
+freetype.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/freetype.h
+END
+ftgasp.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftgasp.h
+END
+ftbdf.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftbdf.h
+END
+ftsizes.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftsizes.h
+END
+fttypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/fttypes.h
+END
+ftwinfnt.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftwinfnt.h
+END
+fterrdef.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/fterrdef.h
+END
+ftmm.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftmm.h
+END
+ftgzip.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftgzip.h
+END
+ttnameid.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ttnameid.h
+END
+fterrors.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/fterrors.h
+END
+ftgxval.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftgxval.h
+END
+ftimage.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftimage.h
+END
+ftsystem.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftsystem.h
+END
+ftotval.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftotval.h
+END
+ftpfr.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftpfr.h
+END
+ftbbox.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftbbox.h
+END
+ftxf86.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftxf86.h
+END
+ftadvanc.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftadvanc.h
+END
+ftlcdfil.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/ftlcdfil.h
+END

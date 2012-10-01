@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal
+END
+ftvalid.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/ftvalid.h
+END
+autohint.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/autohint.h
+END
+ftcalc.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/ftcalc.h
+END
+psaux.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/psaux.h
+END
+ftgloadr.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/ftgloadr.h
+END
+ftmemory.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/ftmemory.h
+END
+ftpic.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/ftpic.h
+END
+t1types.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/t1types.h
+END
+ftserv.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/ftserv.h
+END
+sfnt.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/sfnt.h
+END
+tttypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/tttypes.h
+END
+internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/internal.h
+END
+ftrfork.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/ftrfork.h
+END
+ftdebug.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/ftdebug.h
+END
+ftstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/ftstream.h
+END
+ftdriver.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/ftdriver.h
+END
+ftobjs.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/ftobjs.h
+END
+pshints.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/pshints.h
+END
+fttrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/109/trunk/windows/freetype/freetype/internal/fttrace.h
+END
