@@ -36,13 +36,13 @@ private:
 public:
 	float x,y,z;
 	char* string_speed;
-	glm::mat4x4 VIEW;
+	glm::mat4x4 view;
 	FirstPerson(){};
 
 	FirstPerson(float x,float y,float z);
 	void onMouse(int button, int state, int x, int y);
 
-	void GetViewMatrix();
+	void GetviewMatrix();
 	void Move();
 	void Move(glm::vec3);
 	void onMotion(int x, int y);

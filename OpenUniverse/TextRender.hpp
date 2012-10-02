@@ -4,4 +4,4 @@
 #include <GL/freeglut.h>
 
 void display(const char* fps,const char* speed);
-int init_resources();
+int  InitTextResources();

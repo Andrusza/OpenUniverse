@@ -8,10 +8,14 @@
 #include  "ShaderMenager.hpp"
 #include  "Clock.hpp"
 #include  "FpsCounter.hpp"
+#include "FirstPersonCamera.hpp"
+#include "CosmicBody.hpp"
 
 glm::mat4 projectionMatrix;
 FpsCounter fps;
 ProgramClock clk;
+FirstPerson firstPersonCamera;
+CosmicBody a;
 
 void changeSize(int w, int h) 
 {
@@ -48,6 +52,6 @@ void main(int argc, char* argv[])
 	glutIdleFunc(renderScene);
 
 
-	init_resources();
+	InitTextResources();
 	glutMainLoop();
 }

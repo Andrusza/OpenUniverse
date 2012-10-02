@@ -37,6 +37,12 @@
     <Filter Include="Source Files\Text">
       <UniqueIdentifier>{c1d34930-9f98-4fab-8d83-5d4de7235fd9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{e89d91b7-74a0-4f77-8528-bef51479dc6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects">
+      <UniqueIdentifier>{dd60017b-5d85-4e44-b884-a6d1f55cf37d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -60,6 +66,18 @@
     <ClInclude Include="TextRender.hpp">
       <Filter>Header Files\Text</Filter>
     </ClInclude>
+    <ClInclude Include="Object.hpp">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="CosmicBody.hpp">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.hpp">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="define.hpp">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -82,6 +100,12 @@
     </ClCompile>
     <ClCompile Include="TextRender.cpp">
       <Filter>Source Files\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="CosmicBody.cpp">
+      <Filter>Source Files\Objects</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

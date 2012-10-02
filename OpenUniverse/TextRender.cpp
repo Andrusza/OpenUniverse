@@ -159,7 +159,7 @@ atlas *a12;
 
 glm::vec4 red(1,0,0,1);
 
-int init_resources()
+int InitTextResources()
 {
 
 	shader.init("Shaders//text.vert","Shaders//text.frag");

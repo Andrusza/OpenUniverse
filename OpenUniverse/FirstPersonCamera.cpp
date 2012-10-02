@@ -64,8 +64,8 @@ void FirstPerson::onMotion(int x, int y)
 			this->orientation= this->orientation*glm::angleAxis(yaw, WORLDY);
 		}
 
-		VIEW=glm::mat4_cast(this->orientation);
-		GetViewMatrix();
+		view=glm::mat4_cast(this->orientation);
+		GetviewMatrix();
 
 	}
 }
@@ -99,29 +99,29 @@ void FirstPerson::Move(glm::vec3 direction)
 	this->y=eye[1];
 	this->z=eye[2];
 
-	GetViewMatrix();
+	GetviewMatrix();
 }
 
-void FirstPerson::GetViewMatrix()
+void FirstPerson::GetviewMatrix()
 {
 
-	xAxis[0]=VIEW[0][0];
-	xAxis[1]=VIEW[1][0];
-	xAxis[2]=VIEW[2][0];
+	xAxis[0]=view[0][0];
+	xAxis[1]=view[1][0];
+	xAxis[2]=view[2][0];
 
-	yAxis[0]=VIEW[0][1];
-	yAxis[1]=VIEW[1][1];
-	yAxis[2]=VIEW[2][1];
+	yAxis[0]=view[0][1];
+	yAxis[1]=view[1][1];
+	yAxis[2]=view[2][1];
 
-	zAxis[0]=VIEW[0][2];
-	zAxis[1]=VIEW[1][2];
-	zAxis[2]=VIEW[2][2];
+	zAxis[0]=view[0][2];
+	zAxis[1]=view[1][2];
+	zAxis[2]=view[2][2];
 
 	dir=-zAxis;
 
-	VIEW[3][0] =  - glm::dot(xAxis,eye);
-	VIEW[3][1] =  - glm::dot(yAxis,eye);
-	VIEW[3][2] =  - glm::dot(zAxis,eye);
+	view[3][0] =  - glm::dot(xAxis,eye);
+	view[3][1] =  - glm::dot(yAxis,eye);
+	view[3][2] =  - glm::dot(zAxis,eye);
 
 
 }

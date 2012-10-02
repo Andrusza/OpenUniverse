@@ -72,18 +72,24 @@
   <ItemGroup>
     <ClInclude Include="CheckOpenGL.hpp" />
     <ClInclude Include="Clock.hpp" />
+    <ClInclude Include="CosmicBody.hpp" />
+    <ClInclude Include="define.hpp" />
     <ClInclude Include="FirstPersonCamera.hpp" />
     <ClInclude Include="FpsCounter.hpp" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="Object.hpp" />
     <ClInclude Include="ShaderMenager.hpp" />
     <ClInclude Include="TextRender.hpp" />
+    <ClInclude Include="Vertex.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CheckOpengGL.cpp" />
     <ClCompile Include="Clock.cpp" />
+    <ClCompile Include="CosmicBody.cpp" />
     <ClCompile Include="FirstPersonCamera.cpp" />
     <ClCompile Include="FpsCounter.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="ShaderMenager.cpp" />
     <ClCompile Include="TextRender.cpp" />
   </ItemGroup>
