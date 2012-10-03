@@ -1,0 +1,1 @@
+void CreateGlutWindow(int height,int width,const char* name);

@@ -20,7 +20,7 @@ FirstPerson::FirstPerson(float x,float y,float z)
 	this->WORLDY=glm::vec3(0,1,0);
 	this->dir=glm::vec3(0,0,1);
 	this->speed=1;
-	sprintf(this->string_speed,"%i",speed);
+	sprintf(this->stringSpeed,"%i",speed);
 
 	(this->keys,false,sizeof(this->keys));
 	this->Move(glm::vec3(x,y,z));
@@ -75,14 +75,14 @@ void FirstPerson::onWheel(int button, int dir, int x, int y)
 	if (dir > 0)
 	{
 		this->speed+=10;
-		sprintf(string_speed,"%i",speed);
+		sprintf(stringSpeed,"%i",speed);
 
 	}
 	else
 	{
 		if(speed>30)
 		{
-			sprintf(string_speed,"%i",speed);
+			sprintf(stringSpeed,"%i",speed);
 			this->speed-=10;
 
 		}

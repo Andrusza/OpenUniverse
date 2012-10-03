@@ -44,7 +44,7 @@
     <IncludePath>C:\Users\Andrzej\Documents\Visual Studio 2010\Projects\OpenUniverse\OpenUniverse\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>C:\Users\Andrzej\Documents\Visual Studio 2010\Projects\OpenUniverse\OpenUniverse\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>D:\boost_1_51_0\stage\lib;C:\Users\Andrzej\Documents\Visual Studio 2010\Projects\OpenUniverse\OpenUniverse\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -70,9 +70,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="CheckOpenGL.hpp" />
     <ClInclude Include="Clock.hpp" />
     <ClInclude Include="CosmicBody.hpp" />
+    <ClInclude Include="CreateWindow.hpp" />
     <ClInclude Include="define.hpp" />
     <ClInclude Include="FirstPersonCamera.hpp" />
     <ClInclude Include="FpsCounter.hpp" />
@@ -83,9 +85,11 @@
     <ClInclude Include="Vertex.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CheckOpengGL.cpp" />
     <ClCompile Include="Clock.cpp" />
     <ClCompile Include="CosmicBody.cpp" />
+    <ClCompile Include="CreateWindow.cpp" />
     <ClCompile Include="FirstPersonCamera.cpp" />
     <ClCompile Include="FpsCounter.cpp" />
     <ClCompile Include="main.cpp" />

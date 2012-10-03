@@ -6,7 +6,6 @@
 #include <iostream>
 #include "define.hpp"
 
-
 using namespace std;
 
 void CosmicBody::InitShape(unsigned int stacks, unsigned int slices, float size)
@@ -15,7 +14,6 @@ void CosmicBody::InitShape(unsigned int stacks, unsigned int slices, float size)
     float tStep = (PI) / (float)slices;
 	float sStep = (PI) / (float)stacks;
 
-	//this->verticesSize=(slices*4)*(stacks+1);
 	this->verticesSize=(slices*2)*(stacks-1)+2;
 	this->indicesSize=(slices*2)*6*(stacks-1);
 	
@@ -27,20 +25,7 @@ void CosmicBody::InitShape(unsigned int stacks, unsigned int slices, float size)
 
 	int count=0;
 
-	//for(float t = -PI/2; t <= (PI/2)+0.001;t += tStep)
-	//{
-	//	for(float s = -PI+0.001; s <= PI; s += sStep)
-	//	{
-	//		vertices[count++]=glm::vec4(fA * cos(t) * cos(s),fB * cos(t) * sin(s),fC * sin(t),1.0f);
-	//		//cout<<vertices[count-1].x<<" "<<vertices[count-1].y<<" "<<vertices[count-1].z<<" "<<vertices[count-1].w<<endl;
-	//		vertices[count++]=glm::vec4(fA * cos(t+tStep) * cos(s),fB * cos(t+tStep) * sin(s),fC * sin(t+tStep),1.0f);
-	//		//cout<<vertices[count-1].x<<" "<<vertices[count-1].y<<" "<<vertices[count-1].z<<" "<<vertices[count-1].w<<endl;
-	//		
-	//	}
-	//	
-	//}
 
-	
 	const float min=-PI/2.f+tStep;
 	const float max= PI/2.f-tStep+0.001;
 
@@ -59,7 +44,6 @@ void CosmicBody::InitShape(unsigned int stacks, unsigned int slices, float size)
 			temp.xyz=glm::vec3(size * cos(t) * cos(s),size * cos(t) * sin(s),size * sin(t));
 			vertices[count++]=temp;
 		}
-		//cout<<count<<endl;
 	}
 	temp=Vertex();
 	temp.xyz=glm::vec3(0.f,0.f,size);
@@ -155,10 +139,8 @@ void CosmicBody::InitShape(unsigned int stacks, unsigned int slices, float size)
 
 	for(int i=0;i<verticesSize;i++)
 	{
-		////cout<<i<<" "<<vertices[i].normals.x<<" "<<vertices[i].normals.y<<" "<<vertices[i].normals.z<<endl;
 		vertices[i].u=glm::asin(vertices[i].normals.z)/PI + 0.5f;
 		vertices[i].v=glm::asin(vertices[i].normals.y)/PI + 0.5f;
-		////cout<<i<<" "<<vertices[i].s0<<" "<<vertices[i].t0 <<endl;
 	}
 
 	for(int i=1;i<verticesPerCircle;i++)
@@ -209,11 +191,6 @@ void CosmicBody::InitShape(unsigned int stacks, unsigned int slices, float size)
 	indices[count++]=i -  verticesPerCircle +1;
 	indices[count++]=verticesSize - 1;
 	
-	/*for(int i=0;i<count;i+=3)
-	{
-		cout<<indices[i]<<" "<<indices[i+1]<<" "<<indices[i+2]<<endl;
-	}*/
-
 	glGenVertexArrays(1, &VaoId);
 	glBindVertexArray(VaoId);
 	

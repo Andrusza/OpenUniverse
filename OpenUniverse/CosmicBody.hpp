@@ -2,17 +2,16 @@
 #include <GL/glut.h>
 #include <glm\glm.hpp>
 #include "Object.hpp"
-#include "Vertex.hpp"
 
 #ifndef COSMICBODY_H
 #define COSMICBODY_H
 class CosmicBody: public Object
 {
 private:
-	Vertex* CosmicBody::CreateVertices(unsigned int stacks, unsigned int slices, float size);
+	void CreateIndices();
+	void CreateVertices();
 	void CreateTextureCoords();
 	void CreateNormals();
-	void CreateVertices();
 
 public:
 	unsigned int verticesSize;

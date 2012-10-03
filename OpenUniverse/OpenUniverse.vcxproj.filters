@@ -43,6 +43,12 @@
     <Filter Include="Header Files\Objects">
       <UniqueIdentifier>{dd60017b-5d85-4e44-b884-a6d1f55cf37d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\OpenGLMisc">
+      <UniqueIdentifier>{bf49b1d7-fb98-4953-af8a-f1f9f87f7a09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OpenGLMisc">
+      <UniqueIdentifier>{77dda45c-6938-4602-85ae-74c8e67dadac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -78,6 +84,12 @@
     <ClInclude Include="define.hpp">
       <Filter>Header Files\Misc</Filter>
     </ClInclude>
+    <ClInclude Include="CreateWindow.hpp">
+      <Filter>Header Files\OpenGLMisc</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Cameras</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -106,6 +118,12 @@
     </ClCompile>
     <ClCompile Include="CosmicBody.cpp">
       <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateWindow.cpp">
+      <Filter>Source Files\OpenGLMisc</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Cameras</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
