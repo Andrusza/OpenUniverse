@@ -1,6 +1,6 @@
-#version 330
+#version 400
 layout(location=0) in vec4 coord;
-varying vec2 texpos;
+out vec2 texpos;
 
 void main(void) {
   gl_Position = vec4(coord.xy, 0, 1);

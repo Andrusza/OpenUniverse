@@ -7,8 +7,6 @@
 class FirstPerson
 {
 private:
-	void SetEvents();
-
 	bool keys[256];
 	glm::quat orientation;
 	bool mouse_pressed;
@@ -41,8 +39,8 @@ public:
 	glm::mat4x4 view;
 	FirstPerson(){};
 
-	FirstPerson(float x,float y,float z);
-	
+	void Init(float x,float y,float z);
+	void SetEvents();
 
 	void GetviewMatrix();
 	void Move();

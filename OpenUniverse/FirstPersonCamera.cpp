@@ -15,7 +15,7 @@ const int FirstPerson::KEY_RIGHT=100;
 const float FirstPerson::MOUSE_SENSITIVE=0.1f;
 
 
-FirstPerson::FirstPerson(float x,float y,float z)
+void FirstPerson::Init(float x,float y,float z)
 {
 	this->mouse_pressed=false;
 	this->WORLDX=glm::vec3(1,0,0);
@@ -80,7 +80,6 @@ void FirstPerson::onWheel(int button, int dir, int x, int y)
 	{
 		this->speed+=10;
 		sprintf(stringSpeed,"%i",speed);
-
 	}
 	else
 	{

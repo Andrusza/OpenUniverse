@@ -11,6 +11,8 @@ void CosmicBody::CreateVertices(unsigned int stacks, unsigned int slices, float 
 	float tStep = (PI) / (float)slices;
 	float sStep = (PI) / (float)stacks;
 
+	this->verticesSize=(slices*2)*(stacks-1)+2;
+
 	this->vertices=new Vertex[this->verticesSize];
     const float min=-PI/2.f+tStep;
 	const float max= PI/2.f-tStep+0.001;
@@ -82,6 +84,17 @@ void CosmicBody::CreateIndices(unsigned int stacks, unsigned int slices)
 	indices[count++]=i;
 	indices[count++]=i -  verticesPerCircle +1;
 	indices[count++]=verticesSize - 1;
+
+	for(int i=1;i<verticesPerCircle;i++)
+	{
+		indices[count++]=0;
+		indices[count++]=i+1;
+		indices[count++]=i;
+		
+	}
+	indices[count++]=0;
+	indices[count++]=1;
+	indices[count++]=verticesPerCircle;
 }
 
 void CosmicBody::CreateTextureCoords()
@@ -215,4 +228,11 @@ void CosmicBody::InitPosition(float x,float y,float z)
 {
 	this->position=glm::vec3(x,y,z);
 	Translate(this->position);
+}
+
+void CosmicBody::Draw()
+{
+glBindVertexArray( this->VaoId );
+	glDrawElements(GL_TRIANGLES, this->indicesSize, GL_UNSIGNED_INT, NULL);
+glBindVertexArray(0);
 }

@@ -9,15 +9,16 @@
 #include  "Clock.hpp"
 #include  "FpsCounter.hpp"
 #include "FirstPersonCamera.hpp"
-#include "CosmicBody.hpp"
 #include "CreateWindow.hpp"
 #include "Camera.hpp"
 #include <boost\bind\bind.hpp>
+#include "ObjectsMenager.hpp"
 
 glm::mat4 projectionMatrix;
 FpsCounter fps;
 ProgramClock clk;
 FirstPerson firstPersonCamera;
+ObjectsMenager objects;
 
 
 void changeSize(int w, int h) 
@@ -26,39 +27,17 @@ void changeSize(int w, int h)
 	projectionMatrix = glm::perspective(45.0f, (float)w / (float)h, 0.1f, 9000.f);
 }
 
-void onMouse(int button, int state, int x, int y)
-{
-	firstPersonCamera.onMouse(button,state,x,y);
-}
-
-void onMotion(int x, int y)
-{
-	firstPersonCamera.onMotion(x,y);
-}
-
-void onWheel(int button, int dir, int x, int y)
-{
-	firstPersonCamera.onWheel(button,dir,x,y);
-}
-
-void processNormalKeys(unsigned char key, int x, int y) 
-{
-	firstPersonCamera.processNormalKeys(key,x,y);
-}
-
-void processUpNormalKeys(unsigned char key, int x, int y) 
-{
-	firstPersonCamera.processUpNormalKeys(key,x,y);	
-}
-
 void renderScene(void)
 {
 	clk.getElapsedTime();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	firstPersonCamera.Move();
 
+	glm::mat4 VP=projectionMatrix*firstPersonCamera.view;
+	objects.Draw(clk.elapsedTime,VP);
+
 	display(fps.fps,firstPersonCamera.stringSpeed);
-	
+
 	fps.calculateFPS(clk.elapsedTime);
 	glutSwapBuffers();
 }
@@ -69,13 +48,24 @@ void main(int argc, char* argv[])
 	glutInit(&argc, argv);
 	CreateGlutWindow(800,600,"OpenUniverse");
 	CheckOpenGLVersion();
+	firstPersonCamera.Init(0,0,100);
+
+
 
 	glutReshapeFunc(changeSize);
 	glutDisplayFunc(renderScene);
 	glutIdleFunc(renderScene);
 
-	firstPersonCamera=FirstPerson(0,0,1000);
-	
+	objects.Init(clk.CurrentTime());
+	for(int i=0;i<500;i++)
+	{
+		objects.CreateObject(1,30,-1000,1000,50);
+	}
+
 	InitTextResources();
+
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
+
 	glutMainLoop();
 }

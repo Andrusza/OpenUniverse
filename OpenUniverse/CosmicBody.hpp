@@ -29,8 +29,6 @@ public:
 	CosmicBody()
 	{
 		this->verticesSize=0;
-		//this->VaoId=x;
-		//this->VboId=x;
 		this->indicesSize=0;
 	};
 	~CosmicBody(){};
