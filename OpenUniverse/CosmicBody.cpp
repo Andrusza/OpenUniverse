@@ -1,39 +1,27 @@
 #include  <glm\gtc\type_ptr.hpp>
 #include "CosmicBody.hpp"
-#include "Vertex.hpp"
 #include <GL/glew.h>
 #include <GL/glut.h>
 #include <iostream>
 #include "define.hpp"
 
 using namespace std;
-
-void CosmicBody::InitShape(unsigned int stacks, unsigned int slices, float size)
+void CosmicBody::CreateVertices(unsigned int stacks, unsigned int slices, float size)
 {
-	
-    float tStep = (PI) / (float)slices;
+	float tStep = (PI) / (float)slices;
 	float sStep = (PI) / (float)stacks;
 
-	this->verticesSize=(slices*2)*(stacks-1)+2;
-	this->indicesSize=(slices*2)*6*(stacks-1);
-	
-	Vertex *vertices=new Vertex[verticesSize];
-
-	int verticesPerCircle=slices*2;
-
-	unsigned int *indices=new unsigned int [indicesSize];
+	this->vertices=new Vertex[this->verticesSize];
+    const float min=-PI/2.f+tStep;
+	const float max= PI/2.f-tStep+0.001;
 
 	int count=0;
-
-
-	const float min=-PI/2.f+tStep;
-	const float max= PI/2.f-tStep+0.001;
 
 	Vertex temp=Vertex();
 	temp.xyz=glm::vec3(0.f,0.f,-size);
 	temp.normals=glm::vec3(0,0,1);
 
-	vertices[count++]=temp;
+	this->vertices[count++]=temp;
 
 
 	for(float t = min ; t <= max ;t += tStep)
@@ -42,21 +30,73 @@ void CosmicBody::InitShape(unsigned int stacks, unsigned int slices, float size)
 		{
 			Vertex temp=Vertex();
 			temp.xyz=glm::vec3(size * cos(t) * cos(s),size * cos(t) * sin(s),size * sin(t));
-			vertices[count++]=temp;
+			this->vertices[count++]=temp;
 		}
 	}
 	temp=Vertex();
 	temp.xyz=glm::vec3(0.f,0.f,size);
 	temp.normals=glm::vec3(0,0,-1);
 
-	vertices[count++]=temp;
+	this->vertices[count++]=temp;
+}
 
-	count=0;
-	glm::vec3 sum;
+void CosmicBody::CreateIndices(unsigned int stacks, unsigned int slices)
+{
+	this->indicesSize=(slices*2)*6*(stacks-1);
+	this->indices=new unsigned int [indicesSize];
 
+	int count=0;
 	int i=1;
 
+	for(int j=1;j<stacks-1;j++)
+	{
+		for(;i<verticesPerCircle*j;i++)
+		{
+			indices[count++]=i;
+			indices[count++]=i+ verticesPerCircle+1;
+			indices[count++]=i+ verticesPerCircle;
+
+			indices[count++]=i;
+			indices[count++]=i + 1;
+			indices[count++]=i + verticesPerCircle + 1;
+		}
+
+		indices[count++]=i;
+		indices[count++]=i + 1;
+		indices[count++]=i + verticesPerCircle;
+
+		indices[count++]= i;
+		indices[count++]= i - (verticesPerCircle - 1);
+		indices[count++]=(i - (verticesPerCircle - 1))+verticesPerCircle;
+
+		i++;
+	}
 	
+	for(;i<verticesSize-2;i++)
+	{
+		indices[count++]=i;
+		indices[count++]=i+1;
+		indices[count++]=verticesSize-1;	
+	}
+
+	indices[count++]=i;
+	indices[count++]=i -  verticesPerCircle +1;
+	indices[count++]=verticesSize - 1;
+}
+
+void CosmicBody::CreateTextureCoords()
+{
+	for(int i=0;i<this->verticesSize;i++)
+	{
+		this->vertices[i].u=glm::asin(this->vertices[i].normals.z)/PI + 0.5f;
+		this->vertices[i].v=glm::asin(this->vertices[i].normals.y)/PI + 0.5f;
+	}
+}
+
+void CosmicBody::CreateNormals()
+{
+	
+	int i=1;
 	{
 		glm::vec3 sum;
 
@@ -136,67 +176,22 @@ void CosmicBody::InitShape(unsigned int stacks, unsigned int slices, float size)
 	{
 		vertices[j].normals=-vertices[j - i + 1].normals;	
 	}
+}
 
-	for(int i=0;i<verticesSize;i++)
-	{
-		vertices[i].u=glm::asin(vertices[i].normals.z)/PI + 0.5f;
-		vertices[i].v=glm::asin(vertices[i].normals.y)/PI + 0.5f;
-	}
-
-	for(int i=1;i<verticesPerCircle;i++)
-	{
-		indices[count++]=0;
-		indices[count++]=i+1;
-		indices[count++]=i;
-		
-	}
-	indices[count++]=0;
-	indices[count++]=1;
-	indices[count++]=verticesPerCircle;
-
-	i=1;
-
-	for(int j=1;j<stacks-1;j++)
-	{
-		for(;i<verticesPerCircle*j;i++)
-		{
-			indices[count++]=i;
-			indices[count++]=i+ verticesPerCircle+1;
-			indices[count++]=i+ verticesPerCircle;
-
-			indices[count++]=i;
-			indices[count++]=i + 1;
-			indices[count++]=i + verticesPerCircle + 1;
-		}
-
-		indices[count++]=i;
-		indices[count++]=i + 1;
-		indices[count++]=i + verticesPerCircle;
-
-		indices[count++]= i;
-		indices[count++]= i - (verticesPerCircle - 1);
-		indices[count++]=(i - (verticesPerCircle - 1))+verticesPerCircle;
-
-		i++;
-	}
-	
-	for(;i<verticesSize-2;i++)
-	{
-		indices[count++]=i;
-		indices[count++]=i+1;
-		indices[count++]=verticesSize-1;	
-	}
-
-	indices[count++]=i;
-	indices[count++]=i -  verticesPerCircle +1;
-	indices[count++]=verticesSize - 1;
+void CosmicBody::InitShape(unsigned int stacks, unsigned int slices, float size)
+{
+	this->verticesPerCircle=slices*2;
+	CreateVertices(stacks,slices,size);
+	CreateIndices(stacks,slices);
+	CreateNormals();
+	CreateTextureCoords();
 	
 	glGenVertexArrays(1, &VaoId);
 	glBindVertexArray(VaoId);
 	
 	glGenBuffers(1, &VboId);
 	glBindBuffer(GL_ARRAY_BUFFER, VboId);
-	glBufferData(GL_ARRAY_BUFFER, 32*verticesSize, vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, 32*verticesSize, this->vertices, GL_STATIC_DRAW);
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 32, 0);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 32, (void*)12);
@@ -208,12 +203,12 @@ void CosmicBody::InitShape(unsigned int stacks, unsigned int slices, float size)
 	
 	glGenBuffers(1, &IndexBufferId);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IndexBufferId);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, this->indicesSize*4, indices, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, this->indicesSize*4, this->indices, GL_STATIC_DRAW);
 	
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IndexBufferId);
 
-	delete[] vertices;
-	delete[] indices;
+	delete[] this->vertices;
+	delete[] this->indices;
 }
 
 void CosmicBody::InitPosition(float x,float y,float z)

@@ -11,7 +11,7 @@
 #include "FirstPersonCamera.hpp"
 #include "CosmicBody.hpp"
 #include "CreateWindow.hpp"
-#include "Camera.h"
+#include "Camera.hpp"
 #include <boost\bind\bind.hpp>
 
 glm::mat4 projectionMatrix;
@@ -66,7 +66,6 @@ void renderScene(void)
 
 void main(int argc, char* argv[])
 {
-
 	glutInit(&argc, argv);
 	CreateGlutWindow(800,600,"OpenUniverse");
 	CheckOpenGLVersion();

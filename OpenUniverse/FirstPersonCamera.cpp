@@ -2,7 +2,7 @@
 #include "FirstPersonCamera.hpp"
 #include "main.h"
 #include <glm\gtx\quaternion.hpp>
-#include "Camera.h"
+#include "Camera.hpp"
 #include <boost\bind\bind.hpp>
 
 using namespace std;

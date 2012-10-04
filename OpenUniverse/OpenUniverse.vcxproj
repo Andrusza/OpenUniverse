@@ -53,7 +53,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glew32.lib;opengl32.lib;freetype.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freeglut.lib;freetype.lib;FreeImage.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -67,10 +67,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>freeglut.lib;freetype.lib;FreeImage.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Camera.hpp" />
     <ClInclude Include="CheckOpenGL.hpp" />
     <ClInclude Include="Clock.hpp" />
     <ClInclude Include="CosmicBody.hpp" />
@@ -80,7 +81,7 @@
     <ClInclude Include="FpsCounter.hpp" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Object.hpp" />
-    <ClInclude Include="resource.h" />
+    <ClInclude Include="ObjectsMenager.hpp" />
     <ClInclude Include="ShaderMenager.hpp" />
     <ClInclude Include="TextRender.hpp" />
     <ClInclude Include="Vertex.hpp" />
@@ -95,11 +96,9 @@
     <ClCompile Include="FpsCounter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ObjectsMenager.cpp" />
     <ClCompile Include="ShaderMenager.cpp" />
     <ClCompile Include="TextRender.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="OpenUniverse.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
