@@ -14,11 +14,10 @@
 #include "Camera.h"
 #include <boost\bind\bind.hpp>
 
-
 glm::mat4 projectionMatrix;
 FpsCounter fps;
 ProgramClock clk;
-FirstPerson firstPersonCamera(0,0,1000);
+FirstPerson firstPersonCamera;
 
 
 void changeSize(int w, int h) 
@@ -76,10 +75,8 @@ void main(int argc, char* argv[])
 	glutDisplayFunc(renderScene);
 	glutIdleFunc(renderScene);
 
-	//Camera::onMotion(boost::bind);
-	Camera::onMotion(boost::bind(&FirstPerson::onMotion,&firstPersonCamera,_1,_2));
-	//Camera::processNormalKeys(boost::bind(&FirstPerson::processNormalKeys,firstPersonCamera,_1,_2,_3));
-
+	firstPersonCamera=FirstPerson(0,0,1000);
+	
 	InitTextResources();
 	glutMainLoop();
 }

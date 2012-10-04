@@ -1,12 +1,14 @@
 #include <glm\gtc\quaternion.hpp>
 
+
 #ifndef FIRSTPERSON_H
 #define FIRSTPERSON_H
 
 class FirstPerson
 {
 private:
-	
+	void SetEvents();
+
 	bool keys[256];
 	glm::quat orientation;
 	bool mouse_pressed;
@@ -41,6 +43,7 @@ public:
 
 	FirstPerson(float x,float y,float z);
 	
+
 	void GetviewMatrix();
 	void Move();
 	void Move(glm::vec3);

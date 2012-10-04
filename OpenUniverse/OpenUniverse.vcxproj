@@ -80,6 +80,7 @@
     <ClInclude Include="FpsCounter.hpp" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Object.hpp" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="ShaderMenager.hpp" />
     <ClInclude Include="TextRender.hpp" />
     <ClInclude Include="Vertex.hpp" />
@@ -96,6 +97,9 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ShaderMenager.cpp" />
     <ClCompile Include="TextRender.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OpenUniverse.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,6 +2,8 @@
 #include "FirstPersonCamera.hpp"
 #include "main.h"
 #include <glm\gtx\quaternion.hpp>
+#include "Camera.h"
+#include <boost\bind\bind.hpp>
 
 using namespace std;
 
@@ -24,6 +26,8 @@ FirstPerson::FirstPerson(float x,float y,float z)
 
 	(this->keys,false,sizeof(this->keys));
 	this->Move(glm::vec3(x,y,z));
+
+	SetEvents();
 }
 
 void FirstPerson::onMouse(int button, int state, int x, int y)
@@ -166,4 +170,14 @@ void FirstPerson::Move()
 
 	Move(direction);
 
+}
+
+void FirstPerson::SetEvents()
+{
+	Camera::processNormalKeys(boost::bind(&FirstPerson::processNormalKeys,this,_1,_2,_3));
+	Camera::processUpNormalKeys(boost::bind(&FirstPerson::processUpNormalKeys,this,_1,_2,_3));
+	Camera::onMotion(boost::bind(&FirstPerson::onMotion,this,_1,_2));
+	Camera::onMouse(boost::bind(&FirstPerson::onMouse,this,_1,_2,_3,_4));
+	Camera::onWheel(boost::bind(&FirstPerson::onWheel,this,_1,_2,_3,_4));
+	Camera::SetEvents();
 }

@@ -9,5 +9,6 @@ namespace Camera
     void onMouse(boost::function<void(int,int,int,int)>);
 	void onMotion(boost::function<void(int,int)>);
 	void onWheel(boost::function<void(int,int,int,int)>);
+	void SetEvents();
 };
 #endif 

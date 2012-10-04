@@ -1,8 +1,8 @@
 #include "Camera.h"
+#include <GL\freeglut.h>
 namespace Camera
 {
-	namespace 
-	{
+	
 		boost::function<void(unsigned char, int, int)> onProcessNormalKeysCB = 0;
 		boost::function<void(int,int)> onMotionCB=0;
 		boost::function<void(int,int,int,int)> onMouseCB=0;
@@ -59,7 +59,17 @@ namespace Camera
 			onWheelCB(button,dir,x,y);
 		}
 
-	}
+		void SetEvents()
+		{
+			glutKeyboardFunc(NormalKeyDown);
+			glutKeyboardUpFunc(NormalKeyUp);
+
+			glutMotionFunc(MouseMotion);
+			glutMouseFunc(MouseClick);
+			glutMouseWheelFunc(WheelMove);
+		}
+
+	
 
 
 }
