@@ -21,5 +21,15 @@ public:
 	void CreateGivenObject(unsigned int size,int x,int y,int z,unsigned int RingsAndSlices);
 	void DelateObject();
 	void Draw(unsigned int time,glm::mat4 VP);
+	static ObjectsMenager& get()
+	{
+		static ObjectsMenager* gpSingleton = 0;
+		if (gpSingleton == 0)
+		{
+			gpSingleton = new ObjectsMenager;
+		}
+		assert(gpSingleton);
+		return *gpSingleton;
+	}
 };
 #endif

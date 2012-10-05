@@ -11,9 +11,6 @@
 #include <glm/gtc/type_ptr.hpp>
 #include "ShaderMenager.hpp"
 
-GLuint program;
-GLint attribute_coord=1;
-
 
 struct point {
 	GLfloat x;
@@ -280,5 +277,5 @@ void display(const char* fps,const char* speed)
 
 void free_resources()
 {
-	glDeleteProgram(program);
+	//glDeleteProgram(program);
 }

@@ -82,6 +82,8 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="Object.hpp" />
     <ClInclude Include="ObjectsMenager.hpp" />
+    <ClInclude Include="Render.h" />
+    <ClInclude Include="RenderManager.h" />
     <ClInclude Include="ShaderMenager.hpp" />
     <ClInclude Include="TextRender.hpp" />
     <ClInclude Include="Vertex.hpp" />
@@ -97,6 +99,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectsMenager.cpp" />
+    <ClCompile Include="Render.cpp" />
+    <ClCompile Include="RenderManager.cpp" />
     <ClCompile Include="ShaderMenager.cpp" />
     <ClCompile Include="TextRender.cpp" />
   </ItemGroup>
