@@ -7,18 +7,21 @@
 #include "CheckOpenGL.hpp"
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>
+#include "Star.hpp"
 
 void RenderManager::ChangeSize(int w, int h) 
 {
 	glViewport(0, 0, w, h);
-	projectionMatrix = glm::perspective(45.0f, (float)w / (float)h, 0.1f, 9000.f);
+	projectionMatrix = glm::perspective(45.0f, (float)w / (float)h, 0.1f, 90000.f);
 }
 
 void RenderManager::Render()
 {
 	clk_instance.getElapsedTime();
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	firstPersonCamera.Move();
+
 
 	glm::mat4 VP=projectionMatrix*firstPersonCamera.view;
 	objects.Draw(clk_instance.elapsedTime,VP);
@@ -39,10 +42,14 @@ void RenderManager::StartUp()
 	clk_instance=ProgramClock::get();
 
 	objects.Init(clk_instance.CurrentTime());
+
+	Star temp;
 	for(int i=0;i<1000;i++)
 	{
-		objects.CreateObject(1,100,-1000,1000,50);
+		objects.CreateRandomModelMatrix(2,100,-1000,1000,temp);
+		objects.Add(temp);
 	}
+	objects.CreateInstancedArray(objects.base,objects.listofMatrices);
 
 	InitTextResources();
 

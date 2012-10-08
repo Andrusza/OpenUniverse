@@ -1,26 +1,20 @@
-#include  <glm\gtc\type_ptr.hpp>
-#include "CosmicBody.hpp"
-#include <GL/glew.h>
-#include <GL/glut.h>
-#include <iostream>
+#include "StarMesh.h"
+#include <glm\glm.hpp>
 #include "define.hpp"
 
-using namespace std;
-void CosmicBody::CreateVertices(unsigned int stacks, unsigned int slices, float size)
+void StarMesh::CreateVertices()
 {
-	float tStep = (PI) / (float)slices;
-	float sStep = (PI) / (float)stacks;
+	float tStep = (PI) / (float)this->slices;
+	float sStep = (PI) / (float)this->stacks;
 
 	this->verticesSize=(slices*2)*(stacks-1)+2;
-
 	this->vertices=new Vertex[this->verticesSize];
     const float min=-PI/2.f+tStep;
 	const float max= PI/2.f-tStep+0.001;
 
 	int count=0;
-
 	Vertex temp=Vertex();
-	temp.xyz=glm::vec3(0.f,0.f,-size);
+	temp.xyz=glm::vec3(0.f,0.f,-this->size);
 	temp.normals=glm::vec3(0,0,1);
 
 	this->vertices[count++]=temp;
@@ -31,7 +25,7 @@ void CosmicBody::CreateVertices(unsigned int stacks, unsigned int slices, float 
 		for(float s = -PI+0.001; s < PI; s += sStep)
 		{
 			Vertex temp=Vertex();
-			temp.xyz=glm::vec3(size * cos(t) * cos(s),size * cos(t) * sin(s),size * sin(t));
+			temp.xyz=glm::vec3(this->size * cos(t) * cos(s),size * cos(t) * sin(s),size * sin(t));
 			this->vertices[count++]=temp;
 		}
 	}
@@ -42,9 +36,9 @@ void CosmicBody::CreateVertices(unsigned int stacks, unsigned int slices, float 
 	this->vertices[count++]=temp;
 }
 
-void CosmicBody::CreateIndices(unsigned int stacks, unsigned int slices)
+void StarMesh::CreateIndices()
 {
-	this->indicesSize=(slices*2)*6*(stacks-1);
+	this->indicesSize=(this->slices*2)*6*(this->stacks-1);
 	this->indices=new unsigned int [indicesSize];
 
 	int count=0;
@@ -52,7 +46,7 @@ void CosmicBody::CreateIndices(unsigned int stacks, unsigned int slices)
 
 	for(int j=1;j<stacks-1;j++)
 	{
-		for(;i<verticesPerCircle*j;i++)
+		for(;i<this->verticesPerCircle*j;i++)
 		{
 			indices[count++]=i;
 			indices[count++]=i+ verticesPerCircle+1;
@@ -97,7 +91,7 @@ void CosmicBody::CreateIndices(unsigned int stacks, unsigned int slices)
 	indices[count++]=verticesPerCircle;
 }
 
-void CosmicBody::CreateTextureCoords()
+void StarMesh::CreateTextureCoords()
 {
 	for(int i=0;i<this->verticesSize;i++)
 	{
@@ -106,7 +100,7 @@ void CosmicBody::CreateTextureCoords()
 	}
 }
 
-void CosmicBody::CreateNormals()
+void StarMesh::CreateNormals()
 {
 	
 	int i=1;
@@ -191,48 +185,11 @@ void CosmicBody::CreateNormals()
 	}
 }
 
-void CosmicBody::InitShape(unsigned int stacks, unsigned int slices, float size)
+void StarMesh::InitShape()
 {
-	this->verticesPerCircle=slices*2;
-	CreateVertices(stacks,slices,size);
-	CreateIndices(stacks,slices);
+	
+	CreateVertices();
+	CreateIndices();
 	CreateNormals();
 	CreateTextureCoords();
-	
-	glGenVertexArrays(1, &VaoId);
-	glBindVertexArray(VaoId);
-	
-	glGenBuffers(1, &VboId);
-	glBindBuffer(GL_ARRAY_BUFFER, VboId);
-	glBufferData(GL_ARRAY_BUFFER, 32*verticesSize, this->vertices, GL_STATIC_DRAW);
-
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 32, 0);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 32, (void*)12);
-	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 32, (void*)24);
-
-	glEnableVertexAttribArray(0);
-	glEnableVertexAttribArray(1);
-	glEnableVertexAttribArray(2);
-	
-	glGenBuffers(1, &IndexBufferId);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IndexBufferId);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, this->indicesSize*4, this->indices, GL_STATIC_DRAW);
-	
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IndexBufferId);
-
-	delete[] this->vertices;
-	delete[] this->indices;
-}
-
-void CosmicBody::InitPosition(float x,float y,float z)
-{
-	this->position=glm::vec3(x,y,z);
-	Translate(this->position);
-}
-
-void CosmicBody::Draw()
-{
-glBindVertexArray( this->VaoId );
-	glDrawElements(GL_TRIANGLES, this->indicesSize, GL_UNSIGNED_INT, NULL);
-glBindVertexArray(0);
 }

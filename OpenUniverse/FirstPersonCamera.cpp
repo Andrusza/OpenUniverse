@@ -13,6 +13,7 @@ const int FirstPerson::KEY_BACK=115;
 const int FirstPerson::KEY_LEFT=97;
 const int FirstPerson::KEY_RIGHT=100;
 const float FirstPerson::MOUSE_SENSITIVE=0.1f;
+const int FirstPerson::CONST_SPEED=1;
 
 
 void FirstPerson::Init(float x,float y,float z)
@@ -83,11 +84,16 @@ void FirstPerson::onWheel(int button, int dir, int x, int y)
 	}
 	else
 	{
-		if(speed>30)
+		if(speed>10)
 		{
 			sprintf(stringSpeed,"%i",speed);
 			this->speed-=10;
 
+		}
+		else
+		{
+			sprintf(stringSpeed,"%i",speed);
+			this->speed=1;
 		}
 	}
 }
@@ -149,22 +155,22 @@ void FirstPerson::Move()
 
 	if(keys[KEY_FORWARD])
 	{
-		direction.z+=20*this->speed;
+		direction.z+=CONST_SPEED*this->speed;
 	}
 
 	if(keys[KEY_BACK])
 	{
-		direction.z-=20*this->speed;
+		direction.z-=CONST_SPEED*this->speed;
 	}
 
 	if(keys[KEY_LEFT])
 	{
-		direction.x-=20*this->speed;
+		direction.x-=CONST_SPEED*this->speed;
 	}
 
 	if(keys[KEY_RIGHT])
 	{
-		direction.x+=20*this->speed;
+		direction.x+=CONST_SPEED*this->speed;
 	}
 
 	Move(direction);

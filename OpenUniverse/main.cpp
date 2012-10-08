@@ -3,8 +3,9 @@
 #include <Windows.h>
 #include "CheckOpenGL.hpp"
 #include <glm\gtc\matrix_transform.hpp>
-#include  "FirstPersonCamera.hpp"
 #include "RenderManager.h"
+#include "ObjectsMenager.hpp"
+#include "Clock.hpp"
 
 RenderManager gRenderManager;
 ProgramClock clk;

@@ -32,6 +32,7 @@ private:
 	static const int KEY_LEFT;
 	static const int KEY_RIGHT;
 	static const float MOUSE_SENSITIVE;
+	static const int CONST_SPEED;
 
 public:
 	float x,y,z;

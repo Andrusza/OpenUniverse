@@ -74,7 +74,8 @@
     <ClInclude Include="Camera.hpp" />
     <ClInclude Include="CheckOpenGL.hpp" />
     <ClInclude Include="Clock.hpp" />
-    <ClInclude Include="CosmicBody.hpp" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Star.hpp" />
     <ClInclude Include="CreateWindow.hpp" />
     <ClInclude Include="define.hpp" />
     <ClInclude Include="FirstPersonCamera.hpp" />
@@ -85,6 +86,7 @@
     <ClInclude Include="Render.h" />
     <ClInclude Include="RenderManager.h" />
     <ClInclude Include="ShaderMenager.hpp" />
+    <ClInclude Include="StarMesh.h" />
     <ClInclude Include="TextRender.hpp" />
     <ClInclude Include="Vertex.hpp" />
   </ItemGroup>
@@ -92,7 +94,8 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CheckOpengGL.cpp" />
     <ClCompile Include="Clock.cpp" />
-    <ClCompile Include="CosmicBody.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Star.cpp" />
     <ClCompile Include="CreateWindow.cpp" />
     <ClCompile Include="FirstPersonCamera.cpp" />
     <ClCompile Include="FpsCounter.cpp" />
@@ -102,6 +105,7 @@
     <ClCompile Include="Render.cpp" />
     <ClCompile Include="RenderManager.cpp" />
     <ClCompile Include="ShaderMenager.cpp" />
+    <ClCompile Include="StarMesh.cpp" />
     <ClCompile Include="TextRender.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
